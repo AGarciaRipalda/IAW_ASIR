@@ -1,0 +1,40 @@
+# Archivos y directorios a ignorar
+
+# Dependencias
+/vendor/
+composer.phar
+composer.lock
+
+# Base de datos (contiene datos sensibles)
+/database/*.sqlite
+/database/*.db
+
+# Caché
+/cache/*
+!/cache/.gitkeep
+
+# Logs
+*.log
+php_error.log
+
+# Configuración local
+/includes/blizzard_config.php
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporales
+/tmp/
+*.tmp
+
+# Archivos de Windows
+*.lnk

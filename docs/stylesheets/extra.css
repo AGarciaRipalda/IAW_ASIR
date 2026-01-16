@@ -1,0 +1,50 @@
+/* Custom CSS for WoW Test Manager Documentation */
+
+:root {
+  --wow-gold: #ffd100;
+  --wow-blue: #00b4ff;
+  --wow-purple: #a335ee;
+}
+
+/* Custom styling for WoW theme */
+.md-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.md-tabs {
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+}
+
+/* Code blocks with WoW theme */
+.highlight pre {
+  border-left: 4px solid var(--wow-gold);
+}
+
+/* Links with WoW gold color */
+.md-typeset a {
+  color: var(--wow-blue);
+}
+
+.md-typeset a:hover {
+  color: var(--wow-gold);
+}
+
+/* Admonitions */
+.md-typeset .admonition.note {
+  border-left-color: var(--wow-blue);
+}
+
+.md-typeset .admonition.warning {
+  border-left-color: var(--wow-gold);
+}
+
+/* Tables */
+.md-typeset table:not([class]) th {
+  background-color: var(--wow-purple);
+  color: white;
+}
+
+/* Custom footer */
+.md-footer {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}

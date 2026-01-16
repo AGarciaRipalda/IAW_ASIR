@@ -1,0 +1,208 @@
+/* === FUENTES === */
+*, *::before, *::after {
+    box-sizing: border-box; 
+}
+
+@font-face {
+    font-family: 'Friz Quadrata UI';
+    src: url('frizqt___cyr.ttf') format('truetype');
+    font-weight: normal; font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Morpheus RPG';
+    src: url('morpheus_cyr.ttf') format('truetype');
+    font-weight: normal; font-style: normal;
+    font-display: swap;
+}
+
+/* === VARIABLES === */
+:root {
+    --wow-bg-dark: #0f1216;
+    --wow-panel-bg: #181d24;
+    --wow-border-gold: #b39046;
+    --wow-border-grey: #454545;
+    --wow-text-normal: #fcdba8;
+    --wow-text-gold: #ffd100;
+    --sidebar-width: 240px; 
+}
+
+/* === BASE === */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Friz Quadrata UI', serif; /* Aplicamos la fuente base */
+    background-color: var(--wow-bg-dark);
+    color: var(--wow-text-normal);
+    min-height: 100vh;
+    overflow-x: hidden; 
+}
+
+/* === CURSORES PERSONALIZADOS === */
+.cursor-gauntlet, .cursor-gauntlet a, .cursor-gauntlet button, 
+.cursor-gauntlet .btn-wow, .cursor-gauntlet select, .cursor-gauntlet input {
+    cursor: url('guantelete.png'), auto !important;
+}
+
+.cursor-sword, .cursor-sword a, .cursor-sword button, 
+.cursor-sword .btn-wow, .cursor-sword select, .cursor-sword input {
+    cursor: url('espadita.png'), auto !important;
+}
+
+/* === SIDEBAR === */
+.sidebar {
+    position: fixed; top: 0; left: 0; bottom: 0;
+    width: var(--sidebar-width) !important;
+    min-width: var(--sidebar-width) !important;
+    max-width: var(--sidebar-width) !important;
+    background: #111;
+    border-right: 2px solid var(--wow-border-gold);
+    box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+    z-index: 9999;
+    display: flex; flex-direction: column; overflow-x: hidden; 
+}
+
+.sidebar-logo-top {
+    width: 100%; padding: 20px 15px; text-align: center;
+    border-bottom: 1px solid var(--wow-border-grey);
+    background: rgba(0,0,0,0.3); flex-shrink: 0;
+}
+.sidebar-logo-top img {
+    max-width: 140px !important; width: 100%; height: auto;
+    display: block; margin: 0 auto; filter: drop-shadow(0 0 5px rgba(0,0,0,0.8));
+}
+
+.sidebar-nav { flex-grow: 1; overflow-y: auto; width: 100%; }
+
+.sidebar-nav a {
+    display: flex; align-items: center; gap: 15px; width: 100%; height: 50px; 
+    padding: 0 20px; color: #9d9d9d; text-decoration: none; font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.5px;
+    white-space: nowrap; overflow: hidden;
+}
+
+.sidebar-nav a i {
+    width: 24px; text-align: center; font-size: 1.1rem; color: #555; transition: all 0.3s ease;
+}
+.sidebar-nav a:hover i, .sidebar-nav a.active i {
+    color: var(--wow-text-gold); text-shadow: 0 0 8px rgba(255, 209, 0, 0.6); transform: scale(1.1);
+}
+.sidebar-nav a:hover, .sidebar-nav a.active {
+    color: var(--wow-text-gold);
+    background: linear-gradient(90deg, rgba(189,147,70,0.2) 0%, transparent 100%);
+    border-left: 4px solid var(--wow-text-gold); padding-left: 16px; 
+}
+
+.sidebar-footer {
+    width: 100%; padding: 15px; border-top: 1px solid var(--wow-border-grey);
+    text-align: center; flex-shrink: 0; background: #0a0a0a;
+}
+
+/* BOTÓN CERRAR SESIÓN (Rojo sangre) */
+.sidebar-footer .btn-wow {
+    background: linear-gradient(to bottom, #8a0e0e, #520202) !important;
+    border: 1px solid var(--wow-text-gold) !important;
+    color: var(--wow-text-gold) !important;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) !important;
+}
+.sidebar-footer .btn-wow:hover {
+    background: linear-gradient(to bottom, #a31414, #7a0b0b) !important;
+    color: #fff !important; border-color: #fff !important; filter: brightness(1.2);
+}
+
+/* === CONTENIDO PRINCIPAL === */
+.content {
+    margin-left: var(--sidebar-width) !important; padding: 30px 40px;
+    width: auto; min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: 'Morpheus RPG', serif; /* Títulos */
+    color: var(--wow-text-gold); text-shadow: 2px 2px 0 #000;
+    margin-top: 0; margin-bottom: 25px;
+    border-bottom: 1px solid rgba(179, 144, 70, 0.3); padding-bottom: 10px;
+}
+
+/* === COMPONENTES === */
+.panel {
+    background: var(--wow-panel-bg); border: 1px solid var(--wow-border-grey);
+    border-radius: 4px; padding: 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.7); margin-bottom: 30px;
+    position: relative; overflow: hidden;
+}
+
+table {
+    width: 100%; border-collapse: separate; border-spacing: 0;
+    margin-top: 15px; border: 1px solid var(--wow-border-grey);
+    background: rgba(0,0,0,0.3);
+}
+table th {
+    background: #2b0e06; color: var(--wow-text-gold);
+    font-family: 'Friz Quadrata UI', serif; padding: 10px; text-align: left;
+    border-bottom: 2px solid var(--wow-border-gold);
+    text-transform: uppercase; font-size: 0.8rem; white-space: nowrap;
+}
+table td {
+    padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: #ddd; font-size: 0.9rem;
+}
+table tr:hover td { background-color: rgba(255, 209, 0, 0.05); color: #fff; }
+
+.btn-wow {
+    display: inline-flex; justify-content: center; align-items: center;
+    padding: 6px 16px; font-family: 'Friz Quadrata UI', serif; font-size: 0.85rem;
+    color: #fff !important; text-decoration: none; border-radius: 3px;
+    border: 1px solid #7a7a7a; background: linear-gradient(to bottom, #3d3d3d, #1a1a1a);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 2px 2px #000;
+    text-shadow: 1px 1px 0 #000; cursor: pointer; transition: filter 0.2s;
+    text-transform: uppercase;
+}
+.btn-wow:hover { filter: brightness(1.2); }
+.btn-wow.primary { border-color: #b58c42; background: linear-gradient(to bottom, #8a0e0e, #520202); color: #ffd100 !important; }
+.btn-wow.secondary { border-color: #555; background: linear-gradient(to bottom, #444, #222); }
+.btn-wow.danger { border-color: #550000; background: linear-gradient(to bottom, #500, #200); }
+.btn-wow.disabled { opacity: 0.5; pointer-events: none; filter: grayscale(1); }
+
+.form-grid-sesiones { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.grid-col-form { margin-bottom: 20px; }
+
+input, select, textarea {
+    width: 100%; background: rgba(0, 0, 0, 0.5); border: 1px solid #555;
+    color: #fff; padding: 8px; font-family: 'Friz Quadrata UI', serif; border-radius: 2px;
+}
+input:focus, select:focus, textarea:focus {
+    border-color: var(--wow-text-gold); outline: none; box-shadow: 0 0 5px rgba(255, 209, 0, 0.3);
+}
+label { display: block; margin-bottom: 5px; color: var(--wow-text-gold); font-size: 0.85rem; }
+
+.status { padding: 10px; margin-bottom: 15px; border-radius: 3px; border: 1px solid transparent; }
+.status.success { background: rgba(20, 80, 20, 0.8); border-color: #2d7a2d; color: #8f8; }
+.status.err { background: rgba(80, 20, 20, 0.8); border-color: #7a2d2d; color: #f88; }
+.pagination { margin-top: 20px; display: flex; gap: 8px; justify-content: center; }
+
+.score-high { color: #1eff00; font-weight: bold; }
+.score-mid { color: #ffd100; font-weight: bold; }
+.score-low { color: #9d9d9d; font-weight: bold; }
+
+/* === WIDGET MÚSICA FLOTANTE === */
+.music-control {
+    position: fixed; top: 30px; right: 30px;
+    background: rgba(0, 0, 0, 0.6); border: 2px solid #6b5a3d; color: #f8b700;
+    padding: 8px 15px; border-radius: 4px; cursor: pointer;
+    font-family: 'Morpheus RPG', serif; font-size: 1rem;
+    letter-spacing: 1px; text-shadow: 1px 1px 0 #000;
+    z-index: 10000; display: flex; align-items: center; gap: 8px; transition: all 0.3s;
+}
+.music-control:hover { 
+    background: rgba(0, 0, 0, 0.9); border-color: #ffd700; transform: scale(1.05); color: #fff;
+    box-shadow: 0 0 10px rgba(255, 209, 0, 0.3);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    :root { --sidebar-width: 0px; }
+    .sidebar { display: none; }
+    .content { margin-left: 0 !important; width: 100%; padding: 15px; }
+    .music-control { top: 10px; right: 10px; padding: 5px 10px; font-size: 0.8rem; }
+}
