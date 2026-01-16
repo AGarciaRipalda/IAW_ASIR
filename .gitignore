@@ -36,5 +36,8 @@ desktop.ini
 /tmp/
 *.tmp
 
+# MkDocs
+/site/
+
 # Archivos de Windows
 *.lnk

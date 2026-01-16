@@ -1,124 +1,61 @@
-site_name: WoW Test Manager - Documentación
-site_description: Sistema de gestión de testers para World of Warcraft
+site_name: WoW Test Manager - Documentación Técnica
+site_description: Sistema completo de gestión de pruebas QA con temática World of Warcraft
 site_author: Alejandro
-site_url: https://localhost
+site_url: https://AGarciaRipalda.github.io/IAW_ASIR/
 
-# Repository
-repo_name: my_web
-repo_url: https://github.com/alejandro/my_web
-edit_uri: ""
+repo_name: AGarciaRipalda/IAW_ASIR
+repo_url: https://github.com/AGarciaRipalda/IAW_ASIR
 
-# Copyright
-copyright: Copyright &copy; 2026 Alejandro - IAW ASIR
-
-# Configuration
 theme:
   name: material
   language: es
   palette:
-    # Light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: deep purple
+    # Modo claro
+    - scheme: default
+      primary: deep orange
       accent: amber
       toggle:
         icon: material/brightness-7
         name: Cambiar a modo oscuro
-    # Dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: deep purple
+    # Modo oscuro
+    - scheme: slate
+      primary: deep orange
       accent: amber
       toggle:
         icon: material/brightness-4
         name: Cambiar a modo claro
-  
   features:
-    - navigation.instant
-    - navigation.tracking
     - navigation.tabs
     - navigation.sections
-    - navigation.expand
     - navigation.top
     - search.suggest
     - search.highlight
     - content.code.copy
     - content.code.annotate
-    - toc.follow
-
   icon:
     repo: fontawesome/brands/github
 
-# Extensions
 markdown_extensions:
-  - abbr
-  - admonition
-  - attr_list
-  - def_list
-  - footnotes
-  - meta
-  - md_in_html
-  - toc:
-      permalink: true
-      toc_depth: 3
-  - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.betterem:
-      smart_enable: all
-  - pymdownx.caret
-  - pymdownx.details
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
   - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.mark
-  - pymdownx.smartsymbols
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.snippets
+  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.tilde
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
 
-# Plugins
-plugins:
-  - search:
-      lang: es
-  - glightbox
-
-# Extra CSS
-extra_css:
-  - stylesheets/extra.css
-
-# Extra JavaScript
-extra_javascript:
-  - javascripts/extra.js
-
-# Page tree
 nav:
   - Inicio: index.md
-  
-  - Fase 2:
-    - Propuesta Fase 2: propuesta_fase2.md
-    - Instalación Fase 2: INSTALACION_FASE2.md
-  
-  - Desarrollo:
-    - Plan de Implementación: implementation_plan.md
-    - Walkthrough: walkthrough.md
+  - Documentación Técnica: DOCUMENTACION_TECNICA_COMPLETA.md
 
-# Social links
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/alejandro
-    - icon: fontawesome/solid/envelope
-      link: mailto:alejandro@example.com
+      link: https://github.com/AGarciaRipalda/IAW_ASIR
