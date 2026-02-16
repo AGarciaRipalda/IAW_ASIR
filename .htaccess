@@ -1,0 +1,18 @@
+# Proteger base de datos
+<FilesMatch "\.(db|sqlite)$">
+    Require all denied
+</FilesMatch>
+
+# Redirigir a HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Proteger archivos sensibles
+<Files "composer.json">
+    Require all denied
+</Files>
+
+<Files ".gitignore">
+    Require all denied
+</Files>
