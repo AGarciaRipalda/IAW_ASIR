@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WoW Test Manager - Presentación del Proyecto</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #fcdba8;
+            overflow: hidden;
+        }
+
+        .presentation {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            padding: 60px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #ffd100;
+            text-shadow: 0 0 20px rgba(255, 209, 0, 0.5);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 3rem;
+            color: #ffd100;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 2rem;
+            color: #ffd100;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .subtitle {
+            font-size: 2rem;
+            color: #a31414;
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: rgba(42, 42, 42, 0.8);
+            border: 2px solid #444;
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #ffd100;
+            box-shadow: 0 0 20px rgba(255, 209, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .card p,
+        .card ul {
+            font-size: 1.2rem;
+            text-align: left;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        ul li:before {
+            content: "⚔️";
+            position: absolute;
+            left: 0;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .tech-badge {
+            background: linear-gradient(135deg, #ffd100, #b8860b);
+            color: #000;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 40px;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            color: #ffd100;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 1.5rem;
+            color: #888;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .btn {
+            background: linear-gradient(to bottom, #ffd100, #b8860b);
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to bottom, #ffed4e, #ffd100);
+            box-shadow: 0 0 15px rgba(255, 209, 0, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            font-size: 1.5rem;
+            color: #888;
+            z-index: 1000;
+        }
+
+        .highlight {
+            color: #0070dd;
+            font-weight: bold;
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 30px;
+        }
+
+        .security-item {
+            background: rgba(163, 20, 20, 0.2);
+            border: 2px solid #a31414;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .security-item i {
+            font-size: 3rem;
+            color: #a31414;
+            margin-bottom: 10px;
+        }
+
+        .feature-list {
+            text-align: left;
+            max-width: 800px;
+        }
+
+        .feature-list li {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .logo {
+            width: 200px;
+            margin-bottom: 30px;
+        }
+
+        .screenshot {
+            max-width: 90%;
+            max-height: 500px;
+            border: 3px solid #ffd100;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="presentation">
+        <!-- Slide 1: Portada -->
+        <div class="slide active">
+            <img src="assets/wow_logo.png" alt="WoW Logo" class="logo">
+            <h1>WoW Test Manager</h1>
+            <p class="subtitle">Sistema de Gestión de Calidad QA</p>
+            <p>Proyecto Final - Implantación de Aplicaciones Web</p>
+            <p style="margin-top: 20px; font-size: 1.3rem;">Alejandro García Ripalda | ASIR 2º | Febrero 2026</p>
+        </div>
+
+        <!-- Slide 2: Problema y Solución -->
+        <div class="slide">
+            <h2>🎯 El Problema</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3><i class="fa-solid fa-triangle-exclamation"></i> Situación Actual</h3>
+                    <ul>
+                        <li>Datos dispersos en hojas de cálculo</li>
+                        <li>Sin control de acceso</li>
+                        <li>Reportes manuales y lentos</li>
+                        <li>Errores en transcripción de datos</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-lightbulb"></i> Nuestra Solución</h3>
+                    <ul>
+                        <li>Base de datos centralizada</li>
+                        <li>Roles y permisos granulares</li>
+                        <li>Exportación automática (CSV/PDF)</li>
+                        <li>Integración con API oficial</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Stack Tecnológico -->
+        <div class="slide">
+            <h2>💻 Stack Tecnológico</h2>
+            <p>Tecnologías nativas y robustas, sin frameworks pesados</p>
+            <div class="tech-stack">
+                <div class="tech-badge"><i class="fa-brands fa-php"></i> PHP 8.2.12</div>
+                <div class="tech-badge"><i class="fa-solid fa-database"></i> SQLite 3</div>
+                <div class="tech-badge"><i class="fa-brands fa-html5"></i> HTML5</div>
+                <div class="tech-badge"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+                <div class="tech-badge"><i class="fa-brands fa-js"></i> JavaScript ES6</div>
+                <div class="tech-badge"><i class="fa-solid fa-chart-line"></i> Chart.js</div>
+                <div class="tech-badge"><i class="fa-solid fa-file-pdf"></i> TCPDF</div>
+                <div class="tech-badge"><i class="fa-solid fa-dragon"></i> Blizzard API</div>
+            </div>
+            <p style="margin-top: 40px; font-size: 1.3rem;">
+                <span class="highlight">100% PHP Vanilla</span> - Sin Laravel, sin Symfony<br>
+                Demostración de dominio del lenguaje base
+            </p>
+        </div>
+
+        <!-- Slide 4: Funcionalidades Core -->
+        <div class="slide">
+            <h2>⚙️ Funcionalidades Principales</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3><i class="fa-solid fa-shield-halved"></i> Autenticación</h3>
+                    <p>Sistema de login seguro con roles jerárquicos (Viewer, Tester, Admin) y protección anti-fuerza
+                        bruta</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-gauge-high"></i> Dashboard</h3>
+                    <p>KPIs en tiempo real, gráficos interactivos con Chart.js y tabla de actividad reciente</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-database"></i> CRUD Completo</h3>
+                    <p>Gestión de Testers, Contenido, Sesiones y Usuarios con paginación y búsqueda</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-file-export"></i> Reportes</h3>
+                    <p>Exportación profesional a CSV y PDF con cabeceras personalizadas y diseño corporativo</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Funcionalidades Avanzadas -->
+        <div class="slide">
+            <h2>🚀 Funcionalidades Avanzadas (Fase 2)</h2>
+            <ul class="feature-list">
+                <li><i class="fa-solid fa-dragon"></i> <strong>Integración Blizzard API</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>OAuth 2.0 con cURL nativo</li>
+                        <li>Sincronización automática de datos de personajes</li>
+                        <li>Sistema de caché inteligente (TTL configurable)</li>
+                    </ul>
+                </li>
+                <li><i class="fa-solid fa-file-pdf"></i> <strong>Generación de PDFs</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Librería TCPDF (Composer)</li>
+                        <li>Diseño vectorial profesional</li>
+                        <li>Cabeceras y tablas maquetadas</li>
+                    </ul>
+                </li>
+                <li><i class="fa-solid fa-clipboard-list"></i> <strong>Sistema de Auditoría</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Registro automático de acciones administrativas</li>
+                        <li>Trazabilidad completa (Quién, Qué, Cuándo, Desde dónde)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Slide 6: Seguridad -->
+        <div class="slide">
+            <h2>🔒 Seguridad - Defense in Depth</h2>
+            <div class="security-grid">
+                <div class="security-item">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>SQL Injection</h3>
+                    <p>Sentencias Preparadas (PDO)</p>
+                </div>
+                <div class="security-item">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>XSS</h3>
+                    <p>htmlspecialchars()</p>
+                </div>
+                <div class="security-item">
+                    <i class="fa-solid fa-shield"></i>
+                    <h3>CSRF</h3>
+                    <p>Tokens únicos por sesión</p>
+                </div>
+                <div class="security-item">
+                    <i class="fa-solid fa-user-lock"></i>
+                    <h3>Roles</h3>
+                    <p>Control de acceso granular</p>
+                </div>
+                <div class="security-item">
+                    <i class="fa-solid fa-ban"></i>
+                    <h3>Fuerza Bruta</h3>
+                    <p>Límite de intentos + bloqueo</p>
+                </div>
+                <div class="security-item">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <h3>Auditoría</h3>
+                    <p>Logs inmutables</p>
+                </div>
+            </div>
+            <p style="margin-top: 40px; font-size: 1.3rem;">
+                <span class="highlight">Validaciones nativas PHP</span> con filter_var() - Sin dependencias externas
+            </p>
+        </div>
+
+        <!-- Slide 7: Arquitectura -->
+        <div class="slide">
+            <h2>🏗️ Arquitectura del Sistema</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Patrón MVC Simplificado</h3>
+                    <ul>
+                        <li><code>/admin</code> - Controladores y vistas</li>
+                        <li><code>/includes</code> - Lógica de negocio</li>
+                        <li><code>/database</code> - Modelo de datos</li>
+                        <li><code>/assets</code> - Recursos estáticos</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Base de Datos Relacional</h3>
+                    <ul>
+                        <li><strong>usuarios</strong> - Credenciales y roles</li>
+                        <li><strong>tester</strong> - Probadores + datos Blizzard</li>
+                        <li><strong>content</strong> - Catálogo de pruebas</li>
+                        <li><strong>test_session</strong> - Actividad QA</li>
+                        <li><strong>audit_log</strong> - Trazabilidad</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Métricas del Proyecto -->
+        <div class="slide">
+            <h2>📊 Métricas del Proyecto</h2>
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Archivos PHP</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">~5,000</div>
+                    <div class="stat-label">Líneas de Código</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Tablas BD</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Funciones Seguridad</div>
+                </div>
+            </div>
+            <ul class="feature-list" style="margin-top: 60px;">
+                <li>✅ Sistema de autenticación completo</li>
+                <li>✅ CRUD para todas las entidades</li>
+                <li>✅ Dashboard con KPIs y gráficos</li>
+                <li>✅ Exportación CSV y PDF</li>
+                <li>✅ Integración Blizzard API con cURL</li>
+                <li>✅ Sistema de auditoría</li>
+                <li>✅ Diseño responsive temático</li>
+            </ul>
+        </div>
+
+        <!-- Slide 9: Dificultades Superadas -->
+        <div class="slide">
+            <h2>🎯 Desafíos Técnicos Superados</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3><i class="fa-solid fa-key"></i> OAuth 2.0</h3>
+                    <p>Implementación desde cero del flujo de autenticación con Blizzard, gestión del ciclo de vida del
+                        token y manejo de errores HTTP sin librerías de terceros.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-clock"></i> Manejo de Tiempos</h3>
+                    <p>SQLite no tiene tipos de fecha robustos. Diseñé un sistema de conversión PHP para transformar
+                        horas/minutos en formato estandarizado.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-file-pdf"></i> Maquetación PDF</h3>
+                    <p>Trasladar el diseño visual de la web a PDF con TCPDF requirió trabajo minucioso de
+                        posicionamiento y ajuste de fuentes.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-shield"></i> Seguridad Multicapa</h3>
+                    <p>Implementar todas las medidas de seguridad (CSRF, XSS, SQL Injection, etc.) sin frameworks,
+                        usando solo funciones nativas de PHP.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Demo Visual -->
+        <div class="slide">
+            <h2>🎨 Interfaz de Usuario</h2>
+            <p>Diseño temático coherente con World of Warcraft</p>
+            <img src="screenshots/dashboard_full_1768559427707.png" alt="Dashboard" class="screenshot">
+        </div>
+
+        <!-- Slide 11: Conclusiones -->
+        <div class="slide">
+            <h2>✨ Conclusiones</h2>
+            <ul class="feature-list" style="text-align: center;">
+                <li style="font-size: 1.6rem; margin-bottom: 25px;">
+                    <strong>Proyecto completo y funcional</strong> que cumple todos los requisitos académicos
+                </li>
+                <li style="font-size: 1.6rem; margin-bottom: 25px;">
+                    Demostración de <span class="highlight">dominio de PHP nativo</span> sin frameworks
+                </li>
+                <li style="font-size: 1.6rem; margin-bottom: 25px;">
+                    Integración exitosa con <span class="highlight">API externa</span> (Blizzard)
+                </li>
+                <li style="font-size: 1.6rem; margin-bottom: 25px;">
+                    Implementación de <span class="highlight">buenas prácticas de seguridad</span>
+                </li>
+                <li style="font-size: 1.6rem; margin-bottom: 25px;">
+                    Diseño <span class="highlight">profesional y coherente</span> con la temática
+                </li>
+            </ul>
+            <p style="margin-top: 60px; font-size: 2rem; color: #ffd100;">
+                <strong>"Lok'tar Ogar! - Victoria o Muerte"</strong>
+            </p>
+        </div>
+
+        <!-- Slide 12: Gracias -->
+        <div class="slide">
+            <img src="assets/wow_logo.png" alt="WoW Logo" class="logo">
+            <h1>¡Gracias!</h1>
+            <p style="font-size: 2rem; margin-top: 40px;">¿Preguntas?</p>
+            <p style="margin-top: 60px; font-size: 1.5rem;">
+                <i class="fa-brands fa-github"></i> Repositorio: github.com/AGarciaRipalda/IAW_ASIR<br>
+                <i class="fa-solid fa-envelope"></i> alejandro@example.com
+            </p>
+        </div>
+    </div>
+
+    <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">12</span>
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="previousSlide()">
+            <i class="fa-solid fa-arrow-left"></i> Anterior
+        </button>
+        <button class="btn" onclick="nextSlide()">
+            Siguiente <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Navegación con teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+    </script>
+</body>
+
+</html>
