@@ -1,0 +1,2712 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sistema completo de gestión de pruebas QA con temática World of Warcraft">
+      
+      
+        <meta name="author" content="Alejandro">
+      
+      
+        <link rel="canonical" href="https://AGarciaRipalda.github.io/IAW_ASIR/DOCUMENTACION_TECNICA_COMPLETA/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Documentación Técnica - WoW Test Manager - Documentación Técnica</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wow-test-manager-documentacion-tecnica-completa" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="WoW Test Manager - Documentación Técnica" class="md-header__button md-logo" aria-label="WoW Test Manager - Documentación Técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WoW Test Manager - Documentación Técnica
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Documentación Técnica
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="amber"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AGarciaRipalda/IAW_ASIR" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AGarciaRipalda/IAW_ASIR
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Documentación Técnica
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="WoW Test Manager - Documentación Técnica" class="md-nav__button md-logo" aria-label="WoW Test Manager - Documentación Técnica" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    WoW Test Manager - Documentación Técnica
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AGarciaRipalda/IAW_ASIR" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AGarciaRipalda/IAW_ASIR
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación Técnica
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación Técnica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎮 Resumen del Proyecto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎮 Resumen del Proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tecnologias-utilizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tecnologías Utilizadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capturas-de-pantalla-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🖼️ Capturas de Pantalla del Sistema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🖼️ Capturas de Pantalla del Sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pagina-de-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Página de Login
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard-command-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard (Command Center)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-testers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de Testers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-sesiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de Sesiones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-contenido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de Contenido
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de Usuarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagina-de-reportes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Página de Reportes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sincronizacion-blizzard-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sincronización Blizzard API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuración del Sistema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perfil-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perfil de Usuario
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcionalidades-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Funcionalidades Principales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Funcionalidades Principales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sistema-de-autenticacion-y-autorizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Sistema de Autenticación y Autorización
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Sistema de Autenticación y Autorización">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dashboard-interactivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Dashboard Interactivo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Dashboard Interactivo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-gestion-de-testers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Gestión de Testers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Gestión de Testers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-gestion-de-sesiones-de-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Gestión de Sesiones de Prueba
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Gestión de Sesiones de Prueba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-sistema-de-reportes-y-exportacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Sistema de Reportes y Exportación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Sistema de Reportes y Exportación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo-exportacion-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo - Exportación CSV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo-exportacion-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo - Exportación PDF
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-integracion-con-blizzard-api-fase-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Integración con Blizzard API (Fase 2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Integración con Blizzard API (Fase 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo - Autenticación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo-consulta-de-perfil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo - Consulta de Perfil
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-sistema-de-seguridad-mejorado-fase-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Sistema de Seguridad Mejorado (Fase 2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Sistema de Seguridad Mejorado (Fase 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo-validaciones-nativas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo - Validaciones Nativas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo-sistema-de-auditoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo - Sistema de Auditoría
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗄️ Estructura de Base de Datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🗄️ Estructura de Base de Datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tabla-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabla: usuarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabla-tester" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabla: tester
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabla-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabla: content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabla-test_session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabla: test_session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabla-audit_log-fase-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabla: audit_log (Fase 2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Estructura del Proyecto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diseno-y-experiencia-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎨 Diseño y Experiencia de Usuario
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎨 Diseño y Experiencia de Usuario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-de-diseno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características de Diseño
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-css-de-ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código CSS de Ejemplo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seguridad-implementada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔒 Seguridad Implementada
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔒 Seguridad Implementada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#medidas-de-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medidas de Seguridad
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricas-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Métricas del Proyecto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Métricas del Proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estadisticas-de-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estadísticas de Código
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionalidades
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-y-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Instalación y Configuración
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Instalación y Configuración">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pasos-de-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pasos de Instalación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#credenciales-por-defecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credenciales por Defecto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Conclusión
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎮 Resumen del Proyecto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎮 Resumen del Proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tecnologias-utilizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tecnologías Utilizadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capturas-de-pantalla-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🖼️ Capturas de Pantalla del Sistema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🖼️ Capturas de Pantalla del Sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pagina-de-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Página de Login
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard-command-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard (Command Center)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-testers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de Testers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-sesiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de Sesiones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-contenido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de Contenido
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de Usuarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagina-de-reportes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Página de Reportes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sincronizacion-blizzard-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sincronización Blizzard API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuración del Sistema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perfil-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perfil de Usuario
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcionalidades-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Funcionalidades Principales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Funcionalidades Principales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sistema-de-autenticacion-y-autorizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Sistema de Autenticación y Autorización
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Sistema de Autenticación y Autorización">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dashboard-interactivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Dashboard Interactivo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Dashboard Interactivo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-gestion-de-testers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Gestión de Testers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Gestión de Testers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-gestion-de-sesiones-de-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Gestión de Sesiones de Prueba
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Gestión de Sesiones de Prueba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-sistema-de-reportes-y-exportacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Sistema de Reportes y Exportación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Sistema de Reportes y Exportación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo-exportacion-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo - Exportación CSV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo-exportacion-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo - Exportación PDF
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-integracion-con-blizzard-api-fase-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Integración con Blizzard API (Fase 2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Integración con Blizzard API (Fase 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo - Autenticación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo-consulta-de-perfil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo - Consulta de Perfil
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-sistema-de-seguridad-mejorado-fase-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Sistema de Seguridad Mejorado (Fase 2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Sistema de Seguridad Mejorado (Fase 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo-validaciones-nativas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo - Validaciones Nativas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-ejemplo-sistema-de-auditoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de Ejemplo - Sistema de Auditoría
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗄️ Estructura de Base de Datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🗄️ Estructura de Base de Datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tabla-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabla: usuarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabla-tester" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabla: tester
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabla-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabla: content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabla-test_session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabla: test_session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabla-audit_log-fase-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabla: audit_log (Fase 2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Estructura del Proyecto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diseno-y-experiencia-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎨 Diseño y Experiencia de Usuario
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎨 Diseño y Experiencia de Usuario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-de-diseno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Características de Diseño
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-css-de-ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código CSS de Ejemplo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seguridad-implementada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔒 Seguridad Implementada
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔒 Seguridad Implementada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#medidas-de-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medidas de Seguridad
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricas-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Métricas del Proyecto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Métricas del Proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estadisticas-de-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estadísticas de Código
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionalidades
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacion-y-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Instalación y Configuración
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Instalación y Configuración">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pasos-de-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pasos de Instalación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#credenciales-por-defecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credenciales por Defecto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Conclusión
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="wow-test-manager-documentacion-tecnica-completa">📚 WoW Test Manager - Documentación Técnica Completa<a class="headerlink" href="#wow-test-manager-documentacion-tecnica-completa" title="Permanent link">&para;</a></h1>
+<h2 id="resumen-del-proyecto">🎮 Resumen del Proyecto<a class="headerlink" href="#resumen-del-proyecto" title="Permanent link">&para;</a></h2>
+<p><strong>WoW Test Manager</strong> es un sistema completo de gestión de pruebas QA (Quality Assurance) con temática de World of Warcraft, desarrollado completamente en <strong>PHP puro</strong> con base de datos <strong>SQLite</strong>. El proyecto implementa un panel de administración robusto y seguro para gestionar testers, sesiones de prueba, contenido y reportes.</p>
+<h3 id="tecnologias-utilizadas">Tecnologías Utilizadas<a class="headerlink" href="#tecnologias-utilizadas" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Backend</strong>: PHP 8.2.12 con PDO (PHP Data Objects)</li>
+<li><strong>Base de Datos</strong>: SQLite 3 con sentencias preparadas</li>
+<li><strong>Frontend</strong>: HTML5, CSS3 vanilla, JavaScript nativo</li>
+<li><strong>Visualización</strong>: Chart.js para gráficos estadísticos</li>
+<li><strong>Exportación</strong>: TCPDF para generación de PDFs profesionales</li>
+<li><strong>API Externa</strong>: Blizzard Battle.net API con cURL</li>
+<li><strong>Servidor</strong>: Apache 2.4.58 (XAMPP)</li>
+</ul>
+<hr />
+<h2 id="capturas-de-pantalla-del-sistema">🖼️ Capturas de Pantalla del Sistema<a class="headerlink" href="#capturas-de-pantalla-del-sistema" title="Permanent link">&para;</a></h2>
+<h3 id="pagina-de-login">Página de Login<a class="headerlink" href="#pagina-de-login" title="Permanent link">&para;</a></h3>
+<p><img alt="Login Page" src="../screenshots/login_page.png" /></p>
+<p>Interfaz de autenticación con diseño temático de WoW, incluyendo las estatuas del Portal Oscuro y validación CSRF.</p>
+<h3 id="dashboard-command-center">Dashboard (Command Center)<a class="headerlink" href="#dashboard-command-center" title="Permanent link">&para;</a></h3>
+<p><img alt="Dashboard" src="../screenshots/dashboard_full_1768559427707.png" /></p>
+<p>Panel principal con KPIs en tiempo real, gráficos interactivos de rendimiento y tabla de sesiones recientes.</p>
+<h3 id="gestion-de-testers">Gestión de Testers<a class="headerlink" href="#gestion-de-testers" title="Permanent link">&para;</a></h3>
+<p><img alt="Testers" src="../screenshots/wow_test_testers.png" /></p>
+<p>Formulario de registro de testers con roles (Tank/DPS/Healer) y facciones, junto con tabla de gestión completa.</p>
+<h3 id="gestion-de-sesiones">Gestión de Sesiones<a class="headerlink" href="#gestion-de-sesiones" title="Permanent link">&para;</a></h3>
+<p><img alt="Sesiones" src="../screenshots/wow_test_sessions.png" /></p>
+<p>Registro detallado de sesiones de prueba con puntuaciones, dificultad, tiempo jugado y comentarios.</p>
+<h3 id="gestion-de-contenido">Gestión de Contenido<a class="headerlink" href="#gestion-de-contenido" title="Permanent link">&para;</a></h3>
+<p><img alt="Contenido" src="../screenshots/wow_test_content.png" /></p>
+<p>Administración de contenido a probar (Raids, Dungeons, Classes, Talents) con información de parches.</p>
+<h3 id="gestion-de-usuarios">Gestión de Usuarios<a class="headerlink" href="#gestion-de-usuarios" title="Permanent link">&para;</a></h3>
+<p><img alt="Usuarios" src="../screenshots/wow_test_users.png" /></p>
+<p>Panel de administración de usuarios del sistema con roles jerárquicos (admin, tester, viewer).</p>
+<h3 id="pagina-de-reportes">Página de Reportes<a class="headerlink" href="#pagina-de-reportes" title="Permanent link">&para;</a></h3>
+<p><img alt="Reportes" src="../screenshots/wow_test_reports.png" /></p>
+<p>Estadísticas detalladas con top testers, contenido difícil y exportación a CSV/PDF profesional.</p>
+<h3 id="sincronizacion-blizzard-api">Sincronización Blizzard API<a class="headerlink" href="#sincronizacion-blizzard-api" title="Permanent link">&para;</a></h3>
+<p><img alt="Blizzard Sync" src="../screenshots/wow_test_blizz_sync.png" /></p>
+<p>Interfaz para vincular testers con personajes reales de WoW y sincronizar datos desde la API oficial.</p>
+<h3 id="configuracion-del-sistema">Configuración del Sistema<a class="headerlink" href="#configuracion-del-sistema" title="Permanent link">&para;</a></h3>
+<p><img alt="Configuración" src="../screenshots/wow_test_config.png" /></p>
+<p>Panel de configuración con opciones de personalización del tema, colores y preferencias del sistema.</p>
+<h3 id="perfil-de-usuario">Perfil de Usuario<a class="headerlink" href="#perfil-de-usuario" title="Permanent link">&para;</a></h3>
+<p><img alt="Perfil" src="../screenshots/wow_test_profile.png" /></p>
+<p>Página de perfil personal con información del usuario, estadísticas y opciones de cuenta.</p>
+<hr />
+<h2 id="funcionalidades-principales">🎯 Funcionalidades Principales<a class="headerlink" href="#funcionalidades-principales" title="Permanent link">&para;</a></h2>
+<h3 id="1-sistema-de-autenticacion-y-autorizacion">1. Sistema de Autenticación y Autorización<a class="headerlink" href="#1-sistema-de-autenticacion-y-autorizacion" title="Permanent link">&para;</a></h3>
+<h4 id="caracteristicas">Características<a class="headerlink" href="#caracteristicas" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Login seguro</strong> con protección CSRF</li>
+<li><strong>Sistema de roles jerárquico</strong>: viewer &lt; tester &lt; admin</li>
+<li><strong>Protección anti-fuerza bruta</strong>: 5 intentos, bloqueo de 15 minutos</li>
+<li><strong>Sesiones blindadas</strong> con cookies HttpOnly</li>
+</ul>
+<h4 id="codigo-de-ejemplo">Código de Ejemplo<a class="headerlink" href="#codigo-de-ejemplo" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="x">// includes/wow_auth.php</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="x">function verificarLogin() {</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="x">    if (!isset($_SESSION[&#39;user&#39;])) {</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="x">        header(&quot;Location: ../auth/wow_login.php&quot;);</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="x">        exit;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="x">    }</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="x">}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="x">function verificarRol($rolRequerido) {</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="x">    $roles = [&#39;viewer&#39; =&gt; 1, &#39;tester&#39; =&gt; 2, &#39;admin&#39; =&gt; 3];</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="x">    $miRol = $_SESSION[&#39;user&#39;][&#39;role&#39;] ?? &#39;viewer&#39;;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="x">    if (($roles[$miRol] ?? 0) &lt; ($roles[$rolRequerido] ?? 0)) {</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="x">        die(&quot;&lt;h1&gt;Acceso Denegado&lt;/h1&gt;&quot;);</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="x">    }</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="x">}</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="x">function validarCSRF($token) {</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="x">    if (empty($token) || $token !== ($_SESSION[&#39;csrf_token&#39;] ?? &#39;&#39;)) {</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="x">        die(&quot;Error de seguridad (CSRF).&quot;);</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="x">    }</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="x">}</span>
+</code></pre></div>
+<hr />
+<h3 id="2-dashboard-interactivo">2. Dashboard Interactivo<a class="headerlink" href="#2-dashboard-interactivo" title="Permanent link">&para;</a></h3>
+<h4 id="caracteristicas_1">Características<a class="headerlink" href="#caracteristicas_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>KPIs en tiempo real</strong>: Testers activos, contenidos, sesiones, score global</li>
+<li><strong>Gráficos dinámicos</strong> con Chart.js:</li>
+<li>Rendimiento por tipo de contenido (Raid, Dungeon, Class, Talent)</li>
+<li>Distribución de dificultad (Normal, Heroic, Mythic)</li>
+<li><strong>Tabla de sesiones recientes</strong> con código de colores por puntuación</li>
+<li><strong>Música ambiente</strong> de taberna (opcional)</li>
+</ul>
+<h4 id="codigo-de-ejemplo_1">Código de Ejemplo<a class="headerlink" href="#codigo-de-ejemplo_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="x">// admin/wow_dashboard.php</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="x">// Obtener estadísticas</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="x">$totalTesters = (int)$db-&gt;query(&quot;SELECT COUNT(*) FROM tester&quot;)-&gt;fetchColumn();</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="x">$totalContenido = (int)$db-&gt;query(&quot;SELECT COUNT(*) FROM content&quot;)-&gt;fetchColumn();</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="x">$totalSesiones = (int)$db-&gt;query(&quot;SELECT COUNT(*) FROM test_session&quot;)-&gt;fetchColumn();</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="x">$promedioScore = $db-&gt;query(&quot;SELECT AVG(score) FROM test_session&quot;)-&gt;fetchColumn();</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="x">// Últimas sesiones</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="x">$sesiones = $db-&gt;query(&quot;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="x">    SELECT s.id, tester.name AS tester, content.name AS contenido,</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="x">           s.difficulty, s.score</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="x">    FROM test_session s</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="x">    JOIN tester ON s.tester = tester.id</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="x">    JOIN content ON s.content = content.id</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="x">    ORDER BY s.id DESC LIMIT 5</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="x">&quot;)-&gt;fetchAll(PDO::FETCH_ASSOC);</span>
+</code></pre></div>
+<hr />
+<h3 id="3-gestion-de-testers">3. Gestión de Testers<a class="headerlink" href="#3-gestion-de-testers" title="Permanent link">&para;</a></h3>
+<h4 id="caracteristicas_2">Características<a class="headerlink" href="#caracteristicas_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>CRUD completo</strong> (Crear, Leer, Actualizar, Eliminar)</li>
+<li><strong>Roles</strong>: Tank, DPS, Healer</li>
+<li><strong>Facciones</strong>: Alliance, Horde, Neutral</li>
+<li><strong>Vinculación con personajes WoW</strong> (Fase 2)</li>
+<li><strong>Paginación</strong> de resultados</li>
+</ul>
+<h4 id="codigo-de-ejemplo_2">Código de Ejemplo<a class="headerlink" href="#codigo-de-ejemplo_2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="x">// admin/wow_testers.php</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="x">if ($_SERVER[&#39;REQUEST_METHOD&#39;] === &#39;POST&#39;) {</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="x">    validarCSRF($_POST[&#39;csrf_token&#39;] ?? &#39;&#39;);</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="x">    if (isset($_POST[&#39;delete&#39;])) {</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="x">        $stmt = $db-&gt;prepare(&quot;DELETE FROM tester WHERE id = ?&quot;);</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="x">        $stmt-&gt;execute([(int)$_POST[&#39;delete&#39;]]);</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="x">    } else {</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="x">        $id = (int)$_POST[&#39;id&#39;];</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="x">        $name = trim($_POST[&#39;name&#39;]);</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="x">        $role = $_POST[&#39;role&#39;];</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="x">        $faction = $_POST[&#39;faction&#39;];</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="x">        if ($id &gt; 0) {</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="x">            // Actualizar</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="x">            $stmt = $db-&gt;prepare(&quot;UPDATE tester SET name=?, role=?, faction=? WHERE id=?&quot;);</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="x">            $stmt-&gt;execute([$name, $role, $faction, $id]);</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="x">        } else {</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="x">            // Crear</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="x">            $stmt = $db-&gt;prepare(&quot;INSERT INTO tester (name, role, faction) VALUES (?, ?, ?)&quot;);</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="x">            $stmt-&gt;execute([$name, $role, $faction]);</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="x">        }</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="x">    }</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="x">}</span>
+</code></pre></div>
+<hr />
+<h3 id="4-gestion-de-sesiones-de-prueba">4. Gestión de Sesiones de Prueba<a class="headerlink" href="#4-gestion-de-sesiones-de-prueba" title="Permanent link">&para;</a></h3>
+<h4 id="caracteristicas_3">Características<a class="headerlink" href="#caracteristicas_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Registro detallado</strong> de sesiones QA</li>
+<li><strong>Campos</strong>: Tester, Contenido, Dificultad, Score (0-100), Tiempo, Comentarios</li>
+<li><strong>Búsqueda y filtrado</strong> de sesiones</li>
+<li><strong>Validación de datos</strong> con funciones nativas PHP</li>
+<li><strong>Paginación</strong> de resultados</li>
+</ul>
+<h4 id="codigo-de-ejemplo_3">Código de Ejemplo<a class="headerlink" href="#codigo-de-ejemplo_3" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="x">// admin/wow_sesiones.php</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="x">if ($_SERVER[&#39;REQUEST_METHOD&#39;] === &#39;POST&#39; &amp;&amp; !isset($_POST[&#39;delete&#39;])) {</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="x">    validarCSRF($_POST[&#39;csrf_token&#39;] ?? &#39;&#39;);</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="x">    $tester = (int)$_POST[&#39;tester&#39;];</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="x">    $content = (int)$_POST[&#39;content&#39;];</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="x">    $difficulty = $_POST[&#39;difficulty&#39;];</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="x">    $score = (int)$_POST[&#39;score&#39;];</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="x">    $hours = (int)($_POST[&#39;hours&#39;] ?? 0);</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="x">    $minutes = (int)($_POST[&#39;minutes&#39;] ?? 0);</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="x">    $comments = trim($_POST[&#39;comments&#39;]);</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="x">    $timePlayed = sprintf(&quot;%dh%02dm&quot;, $hours, $minutes);</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="x">    if ($id &gt; 0) {</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="x">        // Actualizar</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="x">        $stmt = $db-&gt;prepare(&quot;</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="x">            UPDATE test_session </span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="x">            SET tester=?, content=?, difficulty=?, score=?, time_played=?, comments=? </span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="x">            WHERE id=?</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="x">        &quot;);</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="x">        $stmt-&gt;execute([$tester, $content, $difficulty, $score, $timePlayed, $comments, $id]);</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="x">    } else {</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="x">        // Crear</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="x">        $stmt = $db-&gt;prepare(&quot;</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="x">            INSERT INTO test_session (tester, content, difficulty, score, time_played, comments) </span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="x">            VALUES (?, ?, ?, ?, ?, ?)</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="x">        &quot;);</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="x">        $stmt-&gt;execute([$tester, $content, $difficulty, $score, $timePlayed, $comments]);</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="x">    }</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="x">}</span>
+</code></pre></div>
+<hr />
+<h3 id="5-sistema-de-reportes-y-exportacion">5. Sistema de Reportes y Exportación<a class="headerlink" href="#5-sistema-de-reportes-y-exportacion" title="Permanent link">&para;</a></h3>
+<h4 id="caracteristicas_4">Características<a class="headerlink" href="#caracteristicas_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Estadísticas avanzadas</strong>:</li>
+<li>Top 5 testers por calidad</li>
+<li>Contenido más difícil</li>
+<li>Distribución de sesiones</li>
+<li><strong>Exportación CSV</strong> completa</li>
+<li><strong>Exportación PDF profesional</strong> con TCPDF (Fase 2)</li>
+</ul>
+<h4 id="codigo-de-ejemplo-exportacion-csv">Código de Ejemplo - Exportación CSV<a class="headerlink" href="#codigo-de-ejemplo-exportacion-csv" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="x">// admin/wow_reportes.php</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="x">if (isset($_GET[&#39;export&#39;])) {</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="x">    header(&#39;Content-Type: text/csv; charset=utf-8&#39;);</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="x">    header(&#39;Content-Disposition: attachment; filename=reporte_wow.csv&#39;);</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="x">    $output = fopen(&#39;php://output&#39;, &#39;w&#39;);</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="x">    fputcsv($output, [&#39;ID&#39;, &#39;Tester&#39;, &#39;Contenido&#39;, &#39;Dificultad&#39;, &#39;Score&#39;, &#39;Horas&#39;, &#39;Comentarios&#39;]);</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="x">    $rows = $db-&gt;query(&quot;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="x">        SELECT s.id, t.name AS tester, c.name AS contenido, </span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="x">               s.difficulty, s.score, s.time_played, s.comments</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="x">        FROM test_session s</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="x">        JOIN tester t ON s.tester = t.id</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="x">        JOIN content c ON s.content = c.id</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="x">        ORDER BY s.id DESC</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="x">    &quot;)-&gt;fetchAll(PDO::FETCH_ASSOC);</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="x">    foreach ($rows as $row) {</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="x">        fputcsv($output, $row);</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="x">    }</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="x">    fclose($output);</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="x">    exit;</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="x">}</span>
+</code></pre></div>
+<h4 id="codigo-de-ejemplo-exportacion-pdf">Código de Ejemplo - Exportación PDF<a class="headerlink" href="#codigo-de-ejemplo-exportacion-pdf" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="x">// admin/wow_reportes_pdf.php</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="x">require_once __DIR__ . &#39;/../vendor/autoload.php&#39;;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="x">class WoWReportPDF extends TCPDF {</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="x">    public function Header() {</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="x">        $logoPath = __DIR__ . &#39;/../assets/wow_logo.png&#39;;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="x">        if (file_exists($logoPath)) {</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="x">            $this-&gt;Image($logoPath, 15, 10, 30);</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="x">        }</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="x">        $this-&gt;SetFont(&#39;helvetica&#39;, &#39;B&#39;, 18);</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="x">        $this-&gt;SetTextColor(255, 209, 0); // Dorado WoW</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="x">        $this-&gt;Cell(0, 15, &#39;WoW Test Manager&#39;, 0, false, &#39;C&#39;);</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="x">    }</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="x">}</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="x">$pdf = new WoWReportPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, &#39;UTF-8&#39;, false);</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="x">$pdf-&gt;SetCreator(&#39;WoW Test Manager&#39;);</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="x">$pdf-&gt;SetTitle(&#39;Reporte de Sesiones QA - &#39; . date(&#39;d/m/Y&#39;));</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="x">$pdf-&gt;AddPage();</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="x">// Añadir contenido al PDF...</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="x">$pdf-&gt;Output(&#39;reporte_wow_&#39; . date(&#39;Ymd&#39;) . &#39;.pdf&#39;, &#39;D&#39;);</span>
+</code></pre></div>
+<hr />
+<h3 id="6-integracion-con-blizzard-api-fase-2">6. Integración con Blizzard API (Fase 2)<a class="headerlink" href="#6-integracion-con-blizzard-api-fase-2" title="Permanent link">&para;</a></h3>
+<h4 id="caracteristicas_5">Características<a class="headerlink" href="#caracteristicas_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Autenticación OAuth2</strong> con credenciales de cliente</li>
+<li><strong>Consulta de perfiles</strong> de personajes WoW</li>
+<li><strong>Datos sincronizados</strong>:</li>
+<li>Nivel del personaje</li>
+<li>Clase (con nombre localizado)</li>
+<li>Item Level (ilvl)</li>
+<li>Facción</li>
+<li><strong>Sistema de caché</strong> (TTL configurable)</li>
+<li><strong>Manejo robusto de errores</strong> HTTP</li>
+</ul>
+<h4 id="codigo-de-ejemplo-autenticacion">Código de Ejemplo - Autenticación<a class="headerlink" href="#codigo-de-ejemplo-autenticacion" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="x">// includes/blizzard_api.php</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="x">class BlizzardAPI {</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="x">    private $clientId;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="x">    private $clientSecret;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="x">    private $accessToken = null;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="x">    public function authenticate() {</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="x">        if ($this-&gt;accessToken &amp;&amp; time() &lt; $this-&gt;tokenExpiry) {</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="x">            return true;</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="x">        }</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="x">        $ch = curl_init(BLIZZARD_OAUTH_URL);</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="x">        curl_setopt_array($ch, [</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="x">            CURLOPT_RETURNTRANSFER =&gt; true,</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="x">            CURLOPT_POST =&gt; true,</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="x">            CURLOPT_USERPWD =&gt; $this-&gt;clientId . &#39;:&#39; . $this-&gt;clientSecret,</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="x">            CURLOPT_POSTFIELDS =&gt; &#39;grant_type=client_credentials&#39;,</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="x">            CURLOPT_TIMEOUT =&gt; 10</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="x">        ]);</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="x">        $response = curl_exec($ch);</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="x">        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="x">        curl_close($ch);</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="x">        if ($httpCode === 200 &amp;&amp; $response) {</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="x">            $data = json_decode($response, true);</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="x">            $this-&gt;accessToken = $data[&#39;access_token&#39;];</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="x">            $this-&gt;tokenExpiry = time() + ($data[&#39;expires_in&#39;] ?? 86400) - 300;</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="x">            return true;</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="x">        }</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="x">        return false;</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a><span class="x">    }</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="x">}</span>
+</code></pre></div>
+<h4 id="codigo-de-ejemplo-consulta-de-perfil">Código de Ejemplo - Consulta de Perfil<a class="headerlink" href="#codigo-de-ejemplo-consulta-de-perfil" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="x">public function getCharacterProfile($realm, $name) {</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="x">    if (!$this-&gt;authenticate()) {</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="x">        return null;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="x">    }</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="x">    // Verificar caché</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="x">    $cacheKey = &quot;profile_{$realm}_{$name}&quot;;</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="x">    $cached = $this-&gt;getCachedData($cacheKey, 3600);</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="x">    if ($cached !== null) {</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="x">        return $cached;</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="x">    }</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="x">    $realm = strtolower(str_replace(&#39; &#39;, &#39;-&#39;, $realm));</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="x">    $name = strtolower($name);</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="x">    $url = BLIZZARD_API_URL . &quot;/profile/wow/character/{$realm}/{$name}&quot;;</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="x">    $url .= &quot;?namespace=profile-&quot; . BLIZZARD_REGION . &quot;&amp;locale=&quot; . BLIZZARD_LOCALE;</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="x">    $ch = curl_init($url);</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="x">    curl_setopt_array($ch, [</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="x">        CURLOPT_RETURNTRANSFER =&gt; true,</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="x">        CURLOPT_HTTPHEADER =&gt; [&#39;Authorization: Bearer &#39; . $this-&gt;accessToken],</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="x">        CURLOPT_TIMEOUT =&gt; 10</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="x">    ]);</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="x">    $response = curl_exec($ch);</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="x">    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="x">    curl_close($ch);</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="x">    if ($httpCode === 200) {</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="x">        $data = json_decode($response, true);</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="x">        $this-&gt;setCachedData($cacheKey, $data);</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="x">        return $data;</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a><span class="x">    }</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a><span class="x">    return null;</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="x">}</span>
+</code></pre></div>
+<hr />
+<h3 id="7-sistema-de-seguridad-mejorado-fase-2">7. Sistema de Seguridad Mejorado (Fase 2)<a class="headerlink" href="#7-sistema-de-seguridad-mejorado-fase-2" title="Permanent link">&para;</a></h3>
+<h4 id="caracteristicas_6">Características<a class="headerlink" href="#caracteristicas_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Validaciones nativas PHP</strong> con <code>filter_var()</code></li>
+<li><strong>Logs de auditoría</strong> automáticos</li>
+<li><strong>Protección CSRF</strong> en todas las operaciones POST</li>
+<li><strong>Sanitización XSS</strong> con <code>htmlspecialchars()</code></li>
+<li><strong>Control de permisos</strong> granular por módulo</li>
+</ul>
+<h4 id="codigo-de-ejemplo-validaciones-nativas">Código de Ejemplo - Validaciones Nativas<a class="headerlink" href="#codigo-de-ejemplo-validaciones-nativas" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="x">// includes/wow_auth.php</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="x">function validarEmail($email) {</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="x">    $emailLimpio = filter_var($email, FILTER_SANITIZE_EMAIL);</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="x">    return filter_var($emailLimpio, FILTER_VALIDATE_EMAIL) !== false;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="x">}</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="x">function validarEntero($valor, $min = null, $max = null) {</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="x">    $opciones = [&#39;options&#39; =&gt; []];</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="x">    if ($min !== null) $opciones[&#39;options&#39;][&#39;min_range&#39;] = $min;</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="x">    if ($max !== null) $opciones[&#39;options&#39;][&#39;max_range&#39;] = $max;</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="x">    return filter_var($valor, FILTER_VALIDATE_INT, $opciones) !== false;</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="x">}</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="x">function sanitizarTexto($texto) {</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="x">    $limpio = trim($texto);</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="x">    return htmlspecialchars($limpio, ENT_QUOTES, &#39;UTF-8&#39;);</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="x">}</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="x">function validarURL($url) {</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="x">    return filter_var($url, FILTER_VALIDATE_URL) !== false;</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="x">}</span>
+</code></pre></div>
+<h4 id="codigo-de-ejemplo-sistema-de-auditoria">Código de Ejemplo - Sistema de Auditoría<a class="headerlink" href="#codigo-de-ejemplo-sistema-de-auditoria" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="x">function registrarAccionAuditoria($usuarioId, $modulo, $accion, $detalles = &#39;&#39;) {</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="x">    try {</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="x">        $dbPath = __DIR__ . &quot;/../database/wow.sqlite&quot;;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="x">        $db = new PDO(&quot;sqlite:&quot; . $dbPath);</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="x">        $db-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="x">        $stmt = $db-&gt;prepare(&quot;</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="x">            INSERT INTO audit_log (usuario_id, modulo, accion, detalles, ip_address, timestamp) </span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="x">            VALUES (?, ?, ?, ?, ?, ?)</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="x">        &quot;);</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="x">        $stmt-&gt;execute([</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="x">            $usuarioId,</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="x">            $modulo,</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="x">            $accion,</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="x">            $detalles,</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="x">            $_SERVER[&#39;REMOTE_ADDR&#39;] ?? &#39;unknown&#39;,</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="x">            time()</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="x">        ]);</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="x">        return true;</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="x">    } catch (Exception $e) {</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="x">        error_log(&quot;Error en auditoría: &quot; . $e-&gt;getMessage());</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="x">        return false;</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="x">    }</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="x">}</span>
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="x">function verificarPermisoEscritura($moduloRequerido = &#39;admin&#39;, $nombreModulo = &#39;&#39;) {</span>
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="x">    if ($_SERVER[&#39;REQUEST_METHOD&#39;] !== &#39;POST&#39;) {</span>
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a><span class="x">        return;</span>
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a><span class="x">    }</span>
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a><span class="x">    verificarRol($moduloRequerido);</span>
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a><span class="x">    if (!isset($_POST[&#39;csrf_token&#39;])) {</span>
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a><span class="x">        die(&quot;Error de seguridad: Token CSRF ausente.&quot;);</span>
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a><span class="x">    }</span>
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a><span class="x">    validarCSRF($_POST[&#39;csrf_token&#39;]);</span>
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a><span class="x">    if (!empty($nombreModulo)) {</span>
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a><span class="x">        registrarAccionAuditoria(</span>
+<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a><span class="x">            $_SESSION[&#39;user&#39;][&#39;id&#39;] ?? 0,</span>
+<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a><span class="x">            $nombreModulo,</span>
+<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a><span class="x">            &#39;WRITE&#39;,</span>
+<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a><span class="x">            &#39;Operación de escritura realizada&#39;</span>
+<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a><span class="x">        );</span>
+<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a><span class="x">    }</span>
+<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a><span class="x">}</span>
+</code></pre></div>
+<hr />
+<h2 id="estructura-de-base-de-datos">🗄️ Estructura de Base de Datos<a class="headerlink" href="#estructura-de-base-de-datos" title="Permanent link">&para;</a></h2>
+<h3 id="tabla-usuarios">Tabla: usuarios<a class="headerlink" href="#tabla-usuarios" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">usuarios</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTOINCREMENT</span><span class="p">,</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="n">email</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="n">password</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="k">role</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;viewer&#39;</span><span class="w"> </span><span class="k">CHECK</span><span class="p">(</span><span class="k">role</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;admin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;tester&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;viewer&#39;</span><span class="p">))</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="p">);</span>
+</code></pre></div>
+<h3 id="tabla-tester">Tabla: tester<a class="headerlink" href="#tabla-tester" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">tester</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTOINCREMENT</span><span class="p">,</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="k">role</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">CHECK</span><span class="p">(</span><span class="k">role</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Tank&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;DPS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Healer&#39;</span><span class="p">)),</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="n">faction</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">CHECK</span><span class="p">(</span><span class="n">faction</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Alliance&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Horde&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Neutral&#39;</span><span class="p">)),</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="n">wow_realm</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="n">wow_character</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="n">wow_level</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="n">wow_class</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="n">wow_ilvl</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span><span class="n">wow_last_sync</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="p">);</span>
+</code></pre></div>
+<h3 id="tabla-content">Tabla: content<a class="headerlink" href="#tabla-content" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTOINCREMENT</span><span class="p">,</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="k">type</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">CHECK</span><span class="p">(</span><span class="k">type</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Raid&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Dungeon&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Class&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Talent&#39;</span><span class="p">)),</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="n">patch</span><span class="w"> </span><span class="nb">TEXT</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p">);</span>
+</code></pre></div>
+<h3 id="tabla-test_session">Tabla: test_session<a class="headerlink" href="#tabla-test_session" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">test_session</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTOINCREMENT</span><span class="p">,</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="n">tester</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="n">content</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="n">time_played</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="n">score</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">CHECK</span><span class="p">(</span><span class="n">score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="n">difficulty</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">CHECK</span><span class="p">(</span><span class="n">difficulty</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Normal&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Heroic&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Mythic&#39;</span><span class="p">)),</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="n">comments</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="p">(</span><span class="n">tester</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">tester</span><span class="p">(</span><span class="n">id</span><span class="p">),</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="p">(</span><span class="n">content</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">content</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="p">);</span>
+</code></pre></div>
+<h3 id="tabla-audit_log-fase-2">Tabla: audit_log (Fase 2)<a class="headerlink" href="#tabla-audit_log-fase-2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">audit_log</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTOINCREMENT</span><span class="p">,</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="n">usuario_id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="n">modulo</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="n">accion</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="n">detalles</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="n">ip_address</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">    </span><span class="k">timestamp</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">    </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="p">(</span><span class="n">usuario_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">usuarios</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="p">);</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_audit_usuario</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">audit_log</span><span class="p">(</span><span class="n">usuario_id</span><span class="p">);</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_audit_timestamp</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">audit_log</span><span class="p">(</span><span class="k">timestamp</span><span class="p">);</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_audit_modulo</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">audit_log</span><span class="p">(</span><span class="n">modulo</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h2 id="estructura-del-proyecto">📁 Estructura del Proyecto<a class="headerlink" href="#estructura-del-proyecto" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>my_web/
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>├── admin/                          # Páginas de administración
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>│   ├── wow_dashboard.php           # Dashboard principal
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>│   ├── wow_sesiones.php            # Gestión de sesiones
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>│   ├── wow_testers.php             # Gestión de testers
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>│   ├── wow_contenido.php           # Gestión de contenido
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>│   ├── wow_usuarios.php            # Gestión de usuarios (admin)
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>│   ├── wow_reportes.php            # Reportes y estadísticas
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>│   ├── wow_reportes_pdf.php        # Generador PDF (Fase 2)
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>│   ├── wow_blizzard_sync.php       # Sincronización Blizzard (Fase 2)
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>│   ├── wow_configuracion.php       # Configuración del sistema
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>│   └── wow_perfil.php              # Perfil de usuario
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>├── auth/                           # Autenticación
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>│   ├── wow_login.php               # Página de login
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>│   └── wow_logout.php              # Cerrar sesión
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>├── includes/                       # Archivos de inclusión
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>│   ├── wow_auth.php                # Sistema de autenticación
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>│   ├── blizzard_config.php         # Configuración Blizzard API
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>│   └── blizzard_api.php            # Clase BlizzardAPI
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>├── assets/                         # Recursos estáticos
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>│   ├── wow_style.css               # Estilos CSS
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>│   ├── wow_logo.png                # Logo WoW
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>│   ├── favicon.png                 # Favicon
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>│   ├── tavern.mp3                  # Música ambiente
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>│   └── icon_*.png                  # Iconos del menú
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>├── database/                       # Base de datos
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>│   └── wow.sqlite                  # Base de datos SQLite
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>├── setup/                          # Scripts de instalación
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>│   ├── crear_bd_wow.php            # Crear tablas
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>│   ├── insertar_datos_wow.php      # Datos de ejemplo
+<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>│   └── crear_tabla_audit.php       # Tabla de auditoría (Fase 2)
+<a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a>├── cache/                          # Caché de API (Fase 2)
+<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a>│   └── blizzard/                   # Caché Blizzard API
+<a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a>├── vendor/                         # Dependencias (Fase 2)
+<a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a>│   ├── autoload.php                # Autoloader
+<a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a>│   └── tecnickcom/tcpdf/           # Librería TCPDF
+<a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a>├── composer.json                   # Configuración Composer
+<a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a>└── README.md                       # Documentación
+</code></pre></div>
+<hr />
+<h2 id="diseno-y-experiencia-de-usuario">🎨 Diseño y Experiencia de Usuario<a class="headerlink" href="#diseno-y-experiencia-de-usuario" title="Permanent link">&para;</a></h2>
+<h3 id="caracteristicas-de-diseno">Características de Diseño<a class="headerlink" href="#caracteristicas-de-diseno" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Temática World of Warcraft</strong> consistente en todas las páginas</li>
+<li><strong>Paleta de colores</strong>:</li>
+<li>Dorado WoW: <code>#ffd100</code></li>
+<li>Rojo épico: <code>#a31414</code></li>
+<li>Azul raro: <code>#0070dd</code></li>
+<li>Fondo oscuro: <code>#1a1a1a</code></li>
+<li><strong>Tipografías temáticas</strong>:</li>
+<li><code>Friz Quadrata UI</code> para títulos</li>
+<li><code>Morpheus RPG</code> para valores destacados</li>
+<li><strong>Cursores personalizados</strong> según rol (espada para tester, guantelete para admin)</li>
+<li><strong>Música ambiente</strong> de taberna (opcional, controlable)</li>
+<li><strong>Animaciones suaves</strong> en hover y transiciones</li>
+<li><strong>Responsive design</strong> para diferentes tamaños de pantalla</li>
+</ul>
+<h3 id="codigo-css-de-ejemplo">Código CSS de Ejemplo<a class="headerlink" href="#codigo-css-de-ejemplo" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c">/* assets/wow_style.css */</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nv">--wow-gold</span><span class="p">:</span><span class="w"> </span><span class="mh">#ffd100</span><span class="p">;</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="nv">--wow-red</span><span class="p">:</span><span class="w"> </span><span class="mh">#a31414</span><span class="p">;</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="nv">--wow-blue</span><span class="p">:</span><span class="w"> </span><span class="mh">#0070dd</span><span class="p">;</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="nv">--bg-dark</span><span class="p">:</span><span class="w"> </span><span class="mh">#1a1a1a</span><span class="p">;</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="nv">--bg-panel</span><span class="p">:</span><span class="w"> </span><span class="mh">#2a2a2a</span><span class="p">;</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="p">}</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="p">.</span><span class="nc">btn-wow</span><span class="p">.</span><span class="nc">primary</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span><span class="w"> </span><span class="kc">bottom</span><span class="p">,</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--wow-gold</span><span class="p">),</span><span class="w"> </span><span class="mh">#b8860b</span><span class="p">);</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#000</span><span class="p">;</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="w">    </span><span class="k">text-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mf">0.3</span><span class="p">);</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#8b6914</span><span class="p">;</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">    </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="kc">all</span><span class="w"> </span><span class="mf">0.2</span><span class="kt">s</span><span class="w"> </span><span class="kc">ease</span><span class="p">;</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="p">}</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="p">.</span><span class="nc">btn-wow</span><span class="p">.</span><span class="nc">primary</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span><span class="w"> </span><span class="kc">bottom</span><span class="p">,</span><span class="w"> </span><span class="mh">#ffed4e</span><span class="p">,</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--wow-gold</span><span class="p">));</span>
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="w">    </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">209</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.6</span><span class="p">);</span>
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="w">    </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">translateY</span><span class="p">(</span><span class="mi">-2</span><span class="kt">px</span><span class="p">);</span>
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="p">}</span>
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a><span class="p">.</span><span class="nc">panel</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span><span class="w"> </span><span class="kc">bottom</span><span class="p">,</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--bg-panel</span><span class="p">),</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--bg-dark</span><span class="p">));</span>
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a><span class="w">    </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#444</span><span class="p">;</span>
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a><span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="kt">px</span><span class="p">;</span>
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span class="w">    </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.5</span><span class="p">);</span>
+<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="seguridad-implementada">🔒 Seguridad Implementada<a class="headerlink" href="#seguridad-implementada" title="Permanent link">&para;</a></h2>
+<h3 id="medidas-de-seguridad">Medidas de Seguridad<a class="headerlink" href="#medidas-de-seguridad" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Prevención SQL Injection</strong></li>
+<li>Uso exclusivo de sentencias preparadas PDO</li>
+<li>
+<p>Validación de tipos de datos</p>
+</li>
+<li>
+<p><strong>Protección CSRF</strong></p>
+</li>
+<li>Tokens únicos por sesión</li>
+<li>
+<p>Validación en todas las operaciones POST</p>
+</li>
+<li>
+<p><strong>Prevención XSS</strong></p>
+</li>
+<li>Sanitización con <code>htmlspecialchars()</code></li>
+<li>
+<p>Escapado de todas las salidas</p>
+</li>
+<li>
+<p><strong>Control de Acceso</strong></p>
+</li>
+<li>Sistema de roles jerárquico</li>
+<li>
+<p>Verificación de permisos en cada página</p>
+</li>
+<li>
+<p><strong>Protección de Sesiones</strong></p>
+</li>
+<li>Cookies HttpOnly</li>
+<li>SameSite policy</li>
+<li>
+<p>Regeneración de ID de sesión</p>
+</li>
+<li>
+<p><strong>Anti-Fuerza Bruta</strong></p>
+</li>
+<li>Límite de 5 intentos fallidos</li>
+<li>
+<p>Bloqueo temporal de 15 minutos</p>
+</li>
+<li>
+<p><strong>Auditoría</strong></p>
+</li>
+<li>Registro de todas las acciones administrativas</li>
+<li>Almacenamiento de IP y timestamp</li>
+</ol>
+<hr />
+<h2 id="metricas-del-proyecto">📊 Métricas del Proyecto<a class="headerlink" href="#metricas-del-proyecto" title="Permanent link">&para;</a></h2>
+<h3 id="estadisticas-de-codigo">Estadísticas de Código<a class="headerlink" href="#estadisticas-de-codigo" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Archivos PHP</strong>: 20+</li>
+<li><strong>Líneas de código</strong>: ~5,000</li>
+<li><strong>Tablas de base de datos</strong>: 5</li>
+<li><strong>Funciones de seguridad</strong>: 10+</li>
+<li><strong>Páginas de administración</strong>: 10</li>
+</ul>
+<h3 id="funcionalidades">Funcionalidades<a class="headerlink" href="#funcionalidades" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ Sistema de autenticación completo</li>
+<li>✅ CRUD para testers, contenido, sesiones, usuarios</li>
+<li>✅ Dashboard con KPIs y gráficos</li>
+<li>✅ Exportación CSV y PDF</li>
+<li>✅ Integración Blizzard API</li>
+<li>✅ Sistema de auditoría</li>
+<li>✅ Validaciones nativas PHP</li>
+<li>✅ Diseño responsive</li>
+<li>✅ Música ambiente</li>
+<li>✅ Paginación de resultados</li>
+</ul>
+<hr />
+<h2 id="instalacion-y-configuracion">🚀 Instalación y Configuración<a class="headerlink" href="#instalacion-y-configuracion" title="Permanent link">&para;</a></h2>
+<h3 id="requisitos">Requisitos<a class="headerlink" href="#requisitos" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PHP 7.4 o superior</li>
+<li>Apache 2.4+</li>
+<li>Extensiones PHP: pdo_sqlite, curl, json</li>
+<li>Composer (para TCPDF)</li>
+</ul>
+<h3 id="pasos-de-instalacion">Pasos de Instalación<a class="headerlink" href="#pasos-de-instalacion" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Copiar proyecto a htdocs</strong>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>xcopy<span class="w"> </span><span class="s2">&quot;d:\ASIR\2º\IAW\my_web&quot;</span><span class="w"> </span><span class="s2">&quot;C:\xampp\htdocs\my_web&quot;</span><span class="w"> </span>/E<span class="w"> </span>/I<span class="w"> </span>/Y
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Crear base de datos</strong>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>php<span class="w"> </span>setup/crear_bd_wow.php
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>php<span class="w"> </span>setup/insertar_datos_wow.php
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>php<span class="w"> </span>setup/crear_tabla_audit.php
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Instalar dependencias</strong>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>composer<span class="w"> </span>install
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Configurar Blizzard API</strong> (opcional)</p>
+</li>
+<li>Editar <code>includes/blizzard_config.php</code></li>
+<li>
+<p>Añadir Client ID y Client Secret</p>
+</li>
+<li>
+<p><strong>Iniciar servidor</strong></p>
+</li>
+<li>Iniciar Apache en XAMPP</li>
+<li>Acceder a: <code>http://localhost/my_web/auth/wow_login.php</code></li>
+</ol>
+<h3 id="credenciales-por-defecto">Credenciales por Defecto<a class="headerlink" href="#credenciales-por-defecto" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Usuario</strong>: admin</li>
+<li><strong>Contraseña</strong>: admin123</li>
+</ul>
+<hr />
+<h2 id="conclusion">🎓 Conclusión<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p><strong>WoW Test Manager</strong> es un sistema completo y profesional de gestión de pruebas QA que demuestra:</p>
+<ul>
+<li><strong>Dominio de PHP puro</strong> sin frameworks</li>
+<li><strong>Seguridad robusta</strong> con múltiples capas de protección</li>
+<li><strong>Integración de APIs externas</strong> con cURL</li>
+<li><strong>Generación de documentos</strong> profesionales (PDF)</li>
+<li><strong>Diseño UX/UI</strong> temático y atractivo</li>
+<li><strong>Arquitectura limpia</strong> y mantenible</li>
+<li><strong>Validación de datos</strong> con funciones nativas</li>
+<li><strong>Sistema de caché</strong> para optimización</li>
+</ul>
+<p>El proyecto está listo para producción y puede ser extendido fácilmente con nuevas funcionalidades.</p>
+<hr />
+<p><strong>Desarrollado por</strong>: Alejandro<br />
+<strong>Asignatura</strong>: Desarrollo Web (IAW)<br />
+<strong>Fecha</strong>: Enero 2026<br />
+<strong>Versión</strong>: 2.0 (Fase 2 completada)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AGarciaRipalda/IAW_ASIR" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

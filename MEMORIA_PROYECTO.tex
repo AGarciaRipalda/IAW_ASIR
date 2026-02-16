@@ -1,0 +1,197 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+% Configuración de página
+\geometry{
+    left=25mm,
+    right=25mm,
+    top=25mm,
+    bottom=25mm,
+}
+
+% Configuración de hipervínculos
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Memoria del Proyecto - WoW Test Manager},
+    pdfpagemode=FullScreen,
+}
+
+% Título y Autor
+\title{\textbf{MEMORIA DEL PROYECTO} \\ Desarrollo e Implementación de Aplicaciones Web (IAW)}
+\author{Alejandro \\ Ciclo Formativo: ASIR 2º}
+\date{Febrero 2026}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{center}
+    \vspace{2cm}
+    \textbf{Título del Proyecto}: WoW Test Manager \\
+    \vspace{0.5cm}
+    \textbf{Fecha de Entrega}: Febrero 2026
+\end{center}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introducción}
+
+\subsection{Descripción del Proyecto}
+\textbf{WoW Test Manager} es una aplicación web diseñada para la gestión integral de procesos de aseguramiento de calidad (QA) en entornos de videojuegos, específicamente inspirada en el MMORPG "World of Warcraft". La herramienta permite a los coordinadores (Administradores) y probadores (Testers) registrar, analizar y reportar el desempeño en diferentes contenidos del juego, como Bandas (Raids) y Mazmorras.
+
+\subsection{Objetivos}
+El objetivo principal es digitalizar el cuaderno de campo de un equipo de pruebas, sustituyendo hojas de cálculo dispersas por una aplicación centralizada, segura y accesible vía web.
+
+\begin{itemize}
+    \item \textbf{Centralización}: Unificar los datos de pruebas en una base de datos relacional.
+    \item \textbf{Automatización}: Facilitar la obtención de datos oficiales de personajes mediante APIs.
+    \item \textbf{Seguridad}: Garantizar que solo personal autorizado pueda acceder o modificar información sensible.
+    \item \textbf{Profesionalización}: Generar reportes estandarizados en formatos universales (PDF/CSV).
+\end{itemize}
+
+\section{Tecnologías Utilizadas}
+Para el desarrollo de este proyecto se ha optado por un stack tecnológico robusto y estándar en la industria, priorizando el uso de funciones nativas sobre frameworks pesados para demostrar dominio del lenguaje.
+
+\subsection{Entorno de Servidor}
+\begin{itemize}
+    \item \textbf{Servidor Web}: Apache 2.4.58 (XAMPP).
+    \item \textbf{Intérprete}: PHP 8.2.12.
+\end{itemize}
+
+\subsection{Backend y Base de Datos}
+\begin{itemize}
+    \item \textbf{Lenguaje}: PHP Puro (Vanilla). No se han utilizado frameworks (Laravel/Symfony) para cumplir con los requisitos académicos de comprensión del lenguaje base.
+    \item \textbf{Base de Datos}: SQLite 3. Elegido por su portabilidad y eficiencia en aplicaciones de escala media, manejado mediante la extensión PDO (PHP Data Objects) para mayor seguridad y abstracción.
+    \item \textbf{Integración API}: cURL nativo de PHP para comunicación HTTP.
+    \item \textbf{Librerías Externas}: TCPDF (instalada vía Composer) para la generación de documentos.
+\end{itemize}
+
+\subsection{Frontend}
+\begin{itemize}
+    \item \textbf{Estructura}: HTML5 Semántico.
+    \item \textbf{Estilos}: CSS3 nativo (Grid y Flexbox) con diseño responsivo.
+    \item \textbf{Interactividad}: JavaScript (ES6) para manipulaciones DOM y lógica de cliente.
+    \item \textbf{Gráficos}: Chart.js para visualización de datos estadísticos.
+\end{itemize}
+
+\section{Arquitectura del Sistema}
+
+\subsection{Estructura de Directorios}
+El proyecto sigue una arquitectura MVC (Modelo-Vista-Controlador) simplificada, separando la lógica de negocio de la presentación visual y los activos estáticos.
+
+\begin{itemize}
+    \item \texttt{/admin}: Contiene los controladores y vistas de la zona privada (Dashboard, Gestión de Testers, etc.).
+    \item \texttt{/includes}: Librerías compartidas, configuración de base de datos y sistema de autenticación (\texttt{wow\_auth.php}).
+    \item \texttt{/auth}: Scripts de inicio y cierre de sesión.
+    \item \texttt{/database}: Archivo \texttt{wow.sqlite} y scripts de conexión.
+    \item \texttt{/assets}: Imágenes, hojas de estilo CSS y archivos JavaScript.
+    \item \texttt{/setup}: Scripts de inicialización y migración de base de datos.
+\end{itemize}
+
+\subsection{Diseño de la Base de Datos}
+El modelo de datos es relacional y consta de las siguientes tablas principales:
+\begin{itemize}
+    \item \textbf{usuarios}: Almacena credenciales (hash) y roles de acceso.
+    \item \textbf{tester}: Información de los probadores, incluyendo datos sincronizados con Blizzard (Nivel, Item Level).
+    \item \textbf{content}: Catálogo de pruebas disponibles (Raids, Dungeons).
+    \item \textbf{test\_session}: Tabla central que registra las actividades, vinculando Testers y Contenido con métricas de desempeño.
+    \item \textbf{audit\_log}: Registro de seguridad para trazabilidad de acciones.
+\end{itemize}
+
+\section{Desarrollo e Implementación}
+
+\subsection{Módulo de Autenticación}
+Se ha implementado un sistema de login propio que verifica las credenciales contra la base de datos utilizando \texttt{password\_verify()}. El sistema gestiona variables de sesión (\texttt{\$\_SESSION}) para persistir la identidad del usuario y su rol durante la navegación.
+
+\subsection{Gestión de Entidades (CRUD)}
+Cada entidad principal (Testers, Usuarios, Contenido) dispone de un módulo de gestión completo que permite:
+\begin{itemize}
+    \item \textbf{C}reate: Añadir nuevos registros mediante formularios validados.
+    \item \textbf{R}ead: Listar registros con paginación y filtros de búsqueda.
+    \item \textbf{U}pdate: Modificar información existente.
+    \item \textbf{D}elete: Eliminar registros (con confirmación de seguridad).
+\end{itemize}
+
+\subsection{Dashboard y Estadísticas}
+La página de inicio del panel de administración ofrece una visión global del estado del sistema, calculando KPIs en tiempo real (puntuación media, actividad reciente) y mostrando gráficos de distribución de dificultad y tipos de contenido.
+
+\section{Seguridad}
+La seguridad ha sido un pilar fundamental en el desarrollo, implementando múltiples capas de defensa ("Defense in Depth").
+
+\subsection{Control de Acceso y Roles}
+El sistema distingue tres niveles de acceso:
+\begin{enumerate}
+    \item \textbf{Viewer}: Solo lectura.
+    \item \textbf{Tester}: Puede registrar sus propias sesiones.
+    \item \textbf{Admin}: Control total, gestión de usuarios y configuración.
+\end{enumerate}
+Cada script PHP verifica al inicio el rol del usuario mediante \texttt{verificarRol('nivel\_requerido')}, deteniendo la ejecución si no se cumplen los permisos.
+
+\subsection{Protección de Datos}
+\begin{itemize}
+    \item \textbf{SQL Injection}: Mitigada al 100\% mediante el uso exclusivo de \textbf{Sentencias Preparadas} (Prepared Statements) en PDO.
+    \item \textbf{XSS (Cross-Site Scripting)}: Todas las salidas de datos a HTML se escapan utilizando \texttt{htmlspecialchars()}.
+    \item \textbf{CSRF (Cross-Site Request Forgery)}: Se generan tokens criptográficos únicos por sesión que deben acompañar a cada petición POST para ser válida.
+\end{itemize}
+
+\section{Funcionalidades Avanzadas}
+
+\subsection{Integración con Blizzard API}
+Para enriquecer los datos de los testers, se conecta con la API oficial de Battle.net.
+\begin{itemize}
+    \item \textbf{Protocolo}: OAuth 2.0 (Client Credentials Flow).
+    \item \textbf{Implementación}: Clase \texttt{BlizzardAPI} propia que gestiona la obtención de tokens y realiza peticiones GET a los endpoints de perfil de personaje (/profile/wow/character).
+    \item \textbf{Beneficio}: Permite actualizar el Nivel, Clase e Item Level de los testers automáticamente, evitando errores manuales.
+\end{itemize}
+
+\subsection{Generación de Reportes PDF}
+Se ha integrado la librería \textbf{TCPDF} para generar informes ejecutivos. A diferencia de una simple impresión web, este módulo construye un documento vectorial con cabeceras personalizadas, tablas maquetadas y diseño corporativo, listo para ser enviado a dirección.
+
+\subsection{Sistema de Auditoría}
+Un módulo transparente ("Logger") intercepta todas las acciones de escritura (POST) realizadas por administradores y las registra en una tabla inmutable (\texttt{audit\_log}), guardando Quién, Qué, Cuándo y Desde dónde (IP) se realizó la acción.
+
+\section{Manual de Usuario}
+
+\subsection{Acceso y Perfiles}
+El sistema es accesible vía navegador web en la ruta del servidor \texttt{/my\_web}.
+\begin{itemize}
+    \item \textbf{Administrador}: Acceso total. Usuario: \texttt{admin} / Password: \texttt{admin123}.
+    \item \textbf{Tester}: Acceso restringido a registro de sesiones.
+\end{itemize}
+
+\subsection{Operativa Diaria}
+\begin{enumerate}
+    \item \textbf{Dar de alta un Tester}: En el menú "Testers", pulsar "Nuevo Recluta". Opcionalmente, usar "Vincular Blizzard" para sincronizar datos reales.
+    \item \textbf{Registrar Sesión}: En "Sesiones", seleccionar el Tester y el Contenido. Introducir la duración (ej: 2h 30m) y la puntuación.
+    \item \textbf{Exportar Datos}: Desde "Reportes", el administrador puede descargar el mes completo en CSV o generar un informe PDF para la reunión semanal.
+\end{enumerate}
+
+\section{Dificultades Encontradas}
+\begin{enumerate}
+    \item \textbf{Autenticación OAuth2}: La gestión del ciclo de vida del token de Blizzard (solicitud, uso, renovación) fue compleja de implementar desde cero sin librerías de terceros. Se solucionó encapsulando la lógica en una clase dedicada con manejo de errores HTTP.
+    \item \textbf{Manejo de Tiempos en SQLite}: Al carecer de tipos de fecha nativos robustos, se tuvo que diseñar una lógica de conversión en PHP para transformar horas/minutos del formulario a un formato de texto estandarizado en base de datos.
+    \item \textbf{Maquetación PDF}: Trasladar el diseño visual de la web a PDF con TCPDF requirió un trabajo minucioso de posicionamiento de celdas y ajuste de fuentes.
+\end{enumerate}
+
+\section{Conclusiones}
+El proyecto \textbf{WoW Test Manager} cumple satisfactoriamente con todos los requisitos planteados en la asignatura. Se ha logrado construir una aplicación web completa, desde el backend hasta el frontend, demostrando la capacidad de integración de tecnologías (PHP, SQL, APIs REST) y aplicando buenas prácticas de seguridad e ingeniería de software. La aplicación es funcional, segura y estéticamente coherente con su temática.
+
+\vspace{2cm}
+\begin{center}
+    \textit{"Lok'tar Ogar! - Victoria o Muerte"} \\
+    (Fin de la Memoria)
+\end{center}
+
+\end{document}

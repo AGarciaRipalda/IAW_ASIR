@@ -1,0 +1,167 @@
+
+=== PÁGINA 1 ===
+Proyecto Final: Desarrollo e Implementación de 
+Aplicación Web 
+El objetivo de esta actividad es aplicar todos los conocimientos adquiridos en el 
+módulo para crear una aplicación funcional que combine la lógica de cliente y 
+servidor basado en la idea inicial que habéis estado desarrollando en el 1º 
+trimestre. 
+1. Requisitos de la Entrega Técnica 
+El proyecto debe estar totalmente operativo y cumplir con los estándares de 
+Implementación de Aplicaciones Web vistos en clase: 
+ 
+Parte Servidor (Backend): Implementación sólida mediante PHP y 
+gestión de datos con SQLite (o MySQL). Se valorará la seguridad 
+(validación de formularios, autenticación) y la correcta manipulación de 
+la base de datos (CRUD). Se puede valorar módulos adicionales 
+instalados en apache2 con su correcta justificación. 
+ 
+Parte Cliente (Frontend): Interfaz de usuario funcional y coherente, 
+utilizando HTML, CSS y JavaScript donde sea necesario. El diseño se 
+tiene en cuenta, pero lo importante es que la comunicación con el 
+servidor este bien construida. 
+ 
+Arquitectura: Organización limpia de carpetas, separación de lógica y 
+vistas, y código debidamente comentado. Los permisos, acceso y 
+usuarios serán aspectos importantes para evaluar. 
+2. Documentación y Fechas Clave  
+Debéis entregar tanto el código fuente como una memoria escrita (PDF) que 
+detalle todo el proceso (objetivos, estructura de BD, dificultades y manual de 
+uso). 
+Hito 
+Contenido 
+Fecha Límite 
+Entrega de 
+Proyecto 
+Código completo + Memoria 
+escrita (PDF). 
+Lunes, 16 de febrero 
+23:59h 
+Entrega de 
+Presentación 
+Archivo de apoyo (PPT, Canva, 
+etc.) para la defensa. 
+Miércoles, 18 de 
+febrero 23:59h 
+Defensa del 
+Proyecto 
+Demostración en vivo y 
+explicación técnica. 
+A partir del 19 de 
+noviembre 
+ 
+3. Rúbrica de Evaluación 
+
+=== PÁGINA 2 ===
+La calificación final se basará en los siguientes criterios (puntuación sobre 10): 
+Criterio 
+Excelente (9-10) 
+Adecuado (5-8) 
+Insuficiente 
+(0-4) 
+Peso 
+Funcionalidad 
+y Lógica (PHP) 
+El sistema realiza 
+altas, bajas y 
+consultas sin 
+errores. Uso 
+avanzado de 
+sesiones y 
+seguridad. 
+Funciona 
+correctamente, 
+pero tiene fallos 
+menores de 
+validación o 
+lógica. 
+La aplicación 
+no funciona o 
+presenta 
+errores críticos 
+en el servidor. 
+30% 
+Gestión de 
+Datos (SQLite) 
+Base de datos bien 
+estructurada, con 
+relaciones 
+coherentes y 
+consultas 
+eficientes. 
+La base de datos 
+funciona pero la 
+estructura es 
+mejorable o poco 
+eficiente. 
+No hay 
+persistencia de 
+datos o la 
+estructura es 
+caótica. 
+20% 
+Interfaz y UX 
+(Cliente) 
+Diseño profesional, 
+intuitivo y 
+adaptativo. 
+Navegación fluida 
+entre pantallas. 
+Diseño funcional 
+pero básico. La 
+navegación es 
+correcta pero 
+simple. 
+Interfaz 
+descuidada, 
+difícil de usar o 
+con enlaces 
+rotos. 
+15% 
+Calidad de la 
+Memoria 
+Documentación 
+exhaustiva, técnica 
+y sin faltas. Incluye 
+todos los 
+apartados 
+requeridos. 
+Documentación 
+completa pero con 
+poca profundidad 
+técnica. 
+Memoria 
+incompleta, 
+mal redactada 
+o falta de 
+apartados 
+clave. 
+15% 
+Defensa y 
+Presentación 
+Domina el código, 
+responde con 
+seguridad y la 
+demo es perfecta. 
+Explica bien el 
+proyecto aunque 
+duda en algunas 
+preguntas 
+técnicas. 
+No sabe 
+explicar cómo 
+funciona su 
+propio código o 
+no funciona la 
+demo. 
+20% 
+ 
+Formato de entrega: Comprimir el proyecto (código + base de datos) y la 
+memoria en un único archivo .zip o .rar donde aparezca vuestro nombre en el 
+zip. Para la defensa vais a tener como máximo 10 minutos para exponer, donde 
+el jueves expondrán algunos alumnos y el viernes otros alumnos. Pondré una 
+
+=== PÁGINA 3 ===
+lista provisional para que podáis realizar cambios entre vosotros si se diera el 
+caso.  
+ 
