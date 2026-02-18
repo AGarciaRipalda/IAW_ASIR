@@ -1,5 +1,5 @@
 {
-    "name": "wow-test-manager",
+    "name": "agarciar/wow-test-manager",
     "description": "Sistema de gestión de pruebas QA con temática World of Warcraft",
     "type": "project",
     "require": {
